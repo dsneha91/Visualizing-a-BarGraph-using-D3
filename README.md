@@ -18,6 +18,8 @@ Installers for the latest stable build for Mac, Windows and Linux (Debian/Ubuntu
 The Linux version has most of the features of the Mac and Windows versions, but is still missing a few things. See the Linux wiki page for a list of known issues and to find out how you can help.
 
 # Usage
+Chrome Browser (rather than Firefox or Internet Explorer or Safari or any
+other browser) is used. 
 
 By default, Brackets opens a folder containing some simple "Getting Started" content. You can choose a different folder to edit using File > Open Folder.
 
