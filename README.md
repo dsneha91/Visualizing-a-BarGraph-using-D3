@@ -27,9 +27,9 @@ Clicking this button automatically launches Chrome Browser where you can instant
 the results of the HTML, CSS, Javascript, or D3 code.
 
 # Files included:
- 1) BarGraph.html
- 2) BarGraphSamle.css 
- 3) BarGraphSample.js 
+  * BarGraph.html
+  * BarGraphSamle.css 
+  * BarGraphSample.js 
 
 # Dataset used: 2016 GDP for 15 countries in Trillions of US Dollars.
 GDP2016TrillionUSDollars.csv
