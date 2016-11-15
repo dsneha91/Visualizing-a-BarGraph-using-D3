@@ -1,20 +1,18 @@
 /* ----------------------------------------------------------------------------
 File: BarGraphSample.js
 Contructs the Bar Graph using D3
-80 characters perline, avoid tabs. Indet at 4 spaces. See google style guide on
-JavaScript if needed.
+See google style guide on JavaScript if needed.
 -----------------------------------------------------------------------------*/ 
 
 // Search "D3 Margin Convention" on Google to understand margins.
-// Add comments here in your own words to explain the margins below (.25 point)
+
 var margin = {top: 10, right: 40, bottom: 150, left: 50},
     width = 760 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
     
 
 // Define SVG. "g" means group SVG elements together.
-// Confused about SVG still, see Chapter 3. 
-// Add comments here in your own words to explain this segment of code (.25 point)
+
 var svg = d3.select("body")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -29,7 +27,7 @@ difference between Ordinal vs Linear scale.
 ----------------------------------------------------------------------*/ 
 
 // Define X and Y SCALE.
-// Add comments in your own words to explain the code below (.25 point)
+
 var xScale = d3.scale.ordinal()
     .rangeRoundBands([0, width], 0.1);
 
@@ -37,7 +35,7 @@ var yScale = d3.scale.linear()
     .range([height, 0]);
 
 // Define X and Y AXIS
-// Define tick marks on the y-axis as shown on the output with an interval of 5 and $ sign(1 point)
+// Define tick marks on the y-axis as shown on the output with an interval of 5 and $ sign
 var xAxis = d3.svg.axis()
     .scale(xScale)
     .orient("bottom");
@@ -58,7 +56,7 @@ the difference between .csv, .tsv and .json files. To import a .tsv or
 
 
 // data.csv contains the country name(key) and its GDP(value)
-// 1 point for explaining the code for reading the data
+
 d3.csv("GDP2016TrillionUSDollars.csv",function(error, data){
     data.forEach(function(d) {
         d.key = d.key;
@@ -67,13 +65,12 @@ d3.csv("GDP2016TrillionUSDollars.csv",function(error, data){
 
     
     // Return X and Y SCALES (domain). See Chapter 7:Scales (Scott M.) 
-    // .25 point for explaining the code below
+   
     xScale.domain(data.map(function(d){ return d.key; }));
     yScale.domain([0,d3.max(data, function(d) {return d.value; })]);
     
     // Creating rectangular bars to represent the data. 
-    // Add comments to explain the code below (no points but there may be a quiz in future)
-    
+   
     //draw the bars
     svg.selectAll('rect')
         .data(data)
@@ -92,7 +89,7 @@ d3.csv("GDP2016TrillionUSDollars.csv",function(error, data){
         })
         .style("fill" , function(d,i) {return 'rgb(20,20, ' + ((i*30) +100)+ ')'})
     
-    // Label the data values(d.value) (3 points)
+    // Label the data values(d.value) 
   
     svg.selectAll('text')
     .data(data)
@@ -110,7 +107,7 @@ d3.csv("GDP2016TrillionUSDollars.csv",function(error, data){
     
     
     
-    // Draw xAxis and position the label at -60 degrees as shown on the output (1 point)
+    // Draw xAxis and position the label at -60 degrees as shown on the output 
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
@@ -123,7 +120,7 @@ d3.csv("GDP2016TrillionUSDollars.csv",function(error, data){
         .attr("font-size", "10px");
         
     
-    // Draw yAxis and postion the label (2 points)
+    // Draw yAxis and postion the label 
 
     svg.append("g")
         .attr("class", "y axis")
