@@ -1,0 +1,26 @@
+svg{
+    background-color:#E6E6E6;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+p{
+    text-indent: 40px;
+}
+//Add .axis path and .axis line commands as described in the book (1 point)
+
+
+.axis path,
+
+.axis line {
+    fill: none;
+    stroke: #803;
+    shape-rendering: crispEdges;
+}
+
+.axis text{
+    font: Times;
+    font-size: 12px;
+    font-weight: bold;
+}
